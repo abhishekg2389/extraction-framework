@@ -29,7 +29,10 @@ class WikiPage(val title: WikiTitle, val redirect: WikiTitle, val id: Long, val 
 
     def this(title: WikiTitle, source : String) =
       this(title, null, -1, -1, -1, 0, "", source, "")
-    
+      
+    def this(title: WikiTitle, redirect: Wiki, id: Long, revision: Long, timestamp: Long, source: String) = 
+      this(title, redirect, id, revision, timestamp, -1, source, "")
+      
     override def toString = "WikiPage(" + title + "," + id + "," + revision + "," + contributorID + "," + contributorName + "," + source + "," + format + ")"
     
     /**
